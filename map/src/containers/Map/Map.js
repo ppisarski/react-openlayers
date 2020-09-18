@@ -4,11 +4,10 @@ import OlMap from 'ol/Map';
 import OlView from 'ol/View';
 import OlLayerTile from 'ol/layer/Tile';
 import OlSourceOSM from 'ol/source/OSM';
-
 import controls from './Controls';
 import interactions from './Interactions';
 
-import 'ol/ol.css';  // if using modified css remember to update it to match ol version
+import 'ol/ol.css';  // if using modified css remember to update it to match the one from current ol version
 import './Map.css';
 
 class Map extends Component {
@@ -38,16 +37,6 @@ class Map extends Component {
         });
     }
 
-    updateMap() {
-        // this.olmap.getView().setCenter(this.state.center);
-        // this.olmap.getView().setZoom(this.state.zoom);
-        this.olmap.getView().animate({
-            center: this.state.center,
-            zoom: this.state.zoom,
-            duration: 2000
-        });
-    }
-
     componentDidMount() {
         this.olmap.setTarget(this.map);
 
@@ -66,16 +55,9 @@ class Map extends Component {
         return true;
     }
 
-    userAction = () => {
-        this.setState({ center: [-12697450, 6629135], zoom: 10 });
-    }
-
     render() {
-        this.updateMap(); // Update map on render?
         return (
-            <div id="map" ref={this.map} className="Map">
-                <button onClick={this.userAction}>setState on click</button>
-            </div>
+            <div id="map" ref={this.map} className="Map" />
         );
     }
 }

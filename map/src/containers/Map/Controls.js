@@ -1,4 +1,4 @@
-import { defaults as defaultControls, Attribution, FullScreen, ScaleLine, ZoomSlider, OverviewMap, MousePosition } from 'ol/control';
+import { defaults, Attribution, FullScreen, ScaleLine, ZoomSlider, OverviewMap, MousePosition } from 'ol/control';
 
 const attribution = new Attribution({
     collapsible: true,
@@ -21,7 +21,7 @@ const overviewMap = new OverviewMap();
 
 const mousePosition = new MousePosition();
 
-const controls = defaultControls({ attribution: false })
+const controls = defaults({ attribution: false })
     .extend([attribution, fullScreen, scaleLine, zoomSlider, overviewMap, mousePosition]);
 
 export default controls;

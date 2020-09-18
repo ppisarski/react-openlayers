@@ -1,12 +1,15 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
-import Map from './Map/Map';
+import Layout from './containers/Layout/Layout';
+import MapLayout from './containers/Map/Map';
 
-const App = () => (
-  <div>
-    <Map />
-  </div>
-);
+class App extends Component {
+  render = () => (
+    <Layout>
+      <Route path="/" exact component={MapLayout} />
+    </Layout >
+  )
+};
 
 export default App;
