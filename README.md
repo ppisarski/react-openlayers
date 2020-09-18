@@ -1,4 +1,4 @@
-# react-openlayers
+# reactapp-with-openlayers
 
 ## ReactJS and OpenLayers map component
 
